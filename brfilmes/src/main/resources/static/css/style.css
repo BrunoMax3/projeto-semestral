@@ -1,0 +1,394 @@
+/* Variáveis de cores */
+:root {
+    --primary-color: #72114b;           /* Rosa escuro */
+    --primary-hover: #ff00b2;           /* Rosa neon para hover */
+    --bg-color: #2d2d2f;                /* Fundo escuro */
+    --card-bg: #232323;                 /* Fundo dos cards */
+    --text-color: #ffffff;              /* Texto principal */
+    --text-muted: #9e9e9e;              /* Texto secundário */
+    --border-color: #444;               /* Cor das bordas */
+    --input-bg: rgba(51, 51, 51, 0.8);  /* Fundo dos inputs */
+}
+
+/* Estilos globais */
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    position: relative;
+    overflow-x: hidden;
+    background-image: radial-gradient(circle at 10% 20%, rgba(38, 0, 32, 0.5) 0%, rgba(15, 15, 19, 1) 90%);
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Contêineres */
+.content-container, .login-container, .register-container {
+    max-width: 500px;
+    margin: 100px auto;
+    padding: 30px;
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+    position: relative;
+    z-index: 2;
+    border: none;
+}
+
+/* Logo */
+.logo {
+    text-align: center;
+    margin-bottom: 30px;
+    color: var(--primary-color);
+    font-size: 32px;
+    font-weight: bold;
+    text-shadow: 0 2px 10px rgb(87, 13, 57);
+}
+
+/* Botões */
+.btn-primary, .btn-login, .btn-register {
+    background-color: #570d39;
+    border-color: #640d50;
+    box-shadow: 0 4px 8px rgb(160, 12, 116);
+    width: 100%;
+    color: white;
+    font-weight: 500;
+}
+
+.btn-primary:hover, .btn-login:hover, .btn-register:hover {
+    background-color: var(--primary-hover);
+    border-color: var(--primary-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgb(255, 0, 178);
+    transition: all 0.3s ease;
+}
+
+/* Formulários */
+.form-control {
+    background-color: var(--input-bg);
+    border-color: var(--border-color);
+    color: var(--text-color);
+    backdrop-filter: blur(5px);
+    padding: 10px 15px;
+}
+
+.form-control:focus {
+    background-color: #333;
+    color: var(--text-color);
+    border-color: #666;
+    box-shadow: 0 0 0 0.25rem rgb(87, 13, 57);
+}
+
+/* Links estilizados */
+a.text-danger, .themed-link {
+    color: #a00c74 !important;
+    text-decoration: none;
+    position: relative;
+    transition: all 0.3s;
+}
+
+a.text-danger:hover, .themed-link:hover {
+    color: #a00c74 !important;
+}
+
+a.text-danger:after, .themed-link:after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1px;
+    bottom: -2px;
+    left: 0;
+    background-color: #a00c74;
+    transition: width 0.3s;
+}
+
+a.text-danger:hover:after, .themed-link:hover:after {
+    width: 100%;
+}
+
+/* Navbar estilizada */
+.navbar {
+    background-color: rgba(10, 10, 10, 0.95);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    border-bottom: 1px solid var(--border-color);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 1030;
+}
+
+.navbar-brand {
+    color: var(--primary-color) !important;
+    font-weight: 700;
+    font-size: 1.8rem;
+    letter-spacing: 1px;
+}
+
+.navbar-brand:hover {
+    color: var(--primary-hover) !important;
+}
+
+/* Estilo do botão de logout personalizado */
+.logout-btn {
+    background-color: var(--wine-color);
+    color: white;
+    padding: 6px 12px;
+    border-radius: 4px;
+    display: inline-flex;
+    align-items: center;
+    transition: background-color 0.3s;
+    font-weight: 500;
+    text-decoration: none;
+    border: 1px solid var(--wine-color);
+    position: fixed;
+    right: 20px;
+    top: 15px;
+    z-index: 1031;
+}
+
+.logout-btn:hover {
+    background-color: #8a1522;
+    color: white;
+    text-decoration: none;
+}
+
+.logout-btn i {
+    margin-right: 6px;
+}
+
+.search-btn {
+    background-color: var(--wine-color);
+    border: 1px solid var(--wine-color);
+    color: white;
+}
+
+.search-btn:hover {
+    background-color: #8a1522;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* Cards de filme */
+.movie-card {
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    height: 100%;
+    border: none;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+.movie-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 25px rgba(160, 12, 116, 0.3);
+}
+
+.movie-poster {
+    height: 250px;
+    background-size: cover;
+    background-position: center;
+    transition: all 0.5s ease;
+}
+
+.movie-card:hover .movie-poster {
+    transform: scale(1.05);
+}
+
+.movie-info {
+    padding: 15px;
+}
+
+.movie-title {
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: var(--text-color);
+}
+
+.movie-genre {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+/* Pesquisa e filtros */
+.search-form {
+    max-width: 500px;
+    margin: 0 auto 30px auto;
+}
+
+.search-input {
+    background-color: var(--input-bg);
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+}
+
+.search-input:focus {
+    background-color: var(--input-bg);
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.25rem rgba(114, 17, 75, 0.25);
+}
+
+.search-btn {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    border: none;
+}
+
+.search-btn:hover {
+    background-color: var(--primary-hover);
+}
+
+.genre-badge {
+    display: inline-block;
+    background-color: rgba(51, 51, 51, 0.8);
+    color: var(--text-color);
+    padding: 5px 12px;
+    border-radius: 30px;
+    font-size: 0.85rem;
+    margin-right: 6px;
+    margin-bottom: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(87, 13, 57, 0.2);
+}
+
+.genre-badge:hover {
+    background-color: var(--primary-color);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(114, 17, 75, 0.3);
+}
+
+/* Elementos cinematográficos no fundo */
+.cinema-elements {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.cinema-element {
+    position: absolute;
+    pointer-events: none;
+    opacity: 0.15;
+    filter: blur(1px);
+}
+
+.film-reel {
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    animation: rotate 30s linear infinite;
+}
+
+.film-strip {
+    height: 60px;
+    background: repeating-linear-gradient(
+            90deg,
+            rgba(0, 0, 0, 0.4),
+            rgba(0, 0, 0, 0.4) 10px,
+            rgba(255, 255, 255, 0.2) 10px,
+            rgba(255, 255, 255, 0.2) 20px
+    );
+    transform: rotate(30deg);
+}
+
+.spotlight {
+    background: radial-gradient(
+            circle at center,
+            rgba(255, 255, 255, 0.1) 0%,
+            rgba(255, 255, 255, 0) 70%
+    );
+    border-radius: 50%;
+    animation: pulse 8s ease-in-out infinite;
+}
+
+.star {
+    width: 2px;
+    height: 2px;
+    background-color: white;
+    border-radius: 50%;
+    animation: twinkle 4s infinite;
+}
+
+/* Gradiente sobreposto ao fundo */
+.background-gradient {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg,
+    rgba(229, 9, 20, 0.05) 0%,
+    rgba(15, 15, 19, 0) 50%,
+    rgba(0, 0, 0, 0.3) 100%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Animações */
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 0.1;
+        transform: scale(0.9);
+    }
+    50% {
+        opacity: 0.2;
+        transform: scale(1.1);
+    }
+    100% {
+        opacity: 0.1;
+        transform: scale(0.9);
+    }
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes twinkle {
+    0% { opacity: 0.3; }
+    50% { opacity: 1; }
+    100% { opacity: 0.3; }
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .content-container, .login-container, .register-container {
+        margin: 50px auto;
+        padding: 20px;
+        max-width: 90%;
+    }
+    
+    .logo {
+        font-size: 28px;
+    }
+    
+    .movie-card {
+        margin-bottom: 20px;
+    }
+}
